@@ -102,9 +102,4 @@ public class AuthController {
         return userService.createUser(user);
     }
 
-	@PostMapping("/create-user2")
-    public User createUser2(@RequestBody User user) {
-        return userService.createUser(user);
-    }
-
 }
