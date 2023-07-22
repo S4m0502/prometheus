@@ -63,7 +63,7 @@ public class AuthController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
     
-    @GETMapping("/getUserDetails")
+    @GetMapping("/getUserDetails")
     public JSONObject getUserDetails(@RequestBody String userID) throws UsernameNotFoundException  {
     	
     		User user = userRepository.findByUserId(userID).orElseThrow(() -> new RuntimeException("User not found !!"));
