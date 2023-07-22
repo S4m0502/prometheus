@@ -64,7 +64,7 @@ public class AuthController {
     }
     
     @PostMapping("/getUserDetails")
-    public JSONObject getUserDetails() throws UsernameNotFoundException  {
+    public String getUserDetails() throws UsernameNotFoundException  {
     	
     		//User user = userRepository.findByUserId(userID).orElseThrow(() -> new RuntimeException("User not found !!"));
 			JSONObject obj = new JSONObject();
@@ -75,7 +75,7 @@ public class AuthController {
 			obj.put("email", "x");
 			obj.put("about", "x");
 			
-    		return obj;
+    		return "test";
     		
     }
 
