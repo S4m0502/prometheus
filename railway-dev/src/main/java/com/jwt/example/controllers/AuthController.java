@@ -63,21 +63,12 @@ public class AuthController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
     
-    @PostMapping("/getUserDetails")
-    public String getUserDetails() throws UsernameNotFoundException  {
-    	
-    		//User user = userRepository.findByUserId(userID).orElseThrow(() -> new RuntimeException("User not found !!"));
-			JSONObject obj = new JSONObject();
-			//obj.put("name", user.getName());
-			//obj.put("email", user.getEmail());
-			//obj.put("about", user.getAbout());
-	    		obj.put("name", "x");
-			obj.put("email", "x");
-			obj.put("about", "x");
-			
-    		return "test";
-    		
-    }
+   @PostMapping("/getUserDetails")
+    public User getUserDetails(@RequestBody String userID) throws UsernameNotFoundException  {
+		User user = userRepository.findByUserId(userID).orElseThrow(() -> new RuntimeException("User not found !!"));
+	return user;
+	
+}
 
     private void doAuthenticate(String email, String password) {
 
